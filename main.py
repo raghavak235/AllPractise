@@ -83,3 +83,155 @@ def ordered_dict(od, item_to_be_inserted):
 
 #ordered_dict(od=OrderedDict([('akshat', '1'), ('nikhil', '2')]) ,item_to_be_inserted = {'manjeet':'3'}
  #)
+
+ 
+def checkOrder(input, pattern): 
+      
+    # create empty OrderedDict 
+    # output will be like {'a': None,'b': None, 'c': None} 
+    dict = OrderedDict.fromkeys(input) 
+    print(dict)
+  
+    # traverse generated OrderedDict parallel with 
+    # pattern string to check if order of characters  
+    # are same or not 
+    ptrlen = 0 
+    for key,value in dict.items(): 
+        print('out', key)
+        if (key == pattern[ptrlen]): 
+            ptrlen = ptrlen + 1
+            print(ptrlen, key)
+          
+        # check if we have traverse complete  
+        # pattern string 
+        if (ptrlen == (len(pattern))): 
+            return 'true'
+  
+    # if we come out from for loop that means  
+    # order was mismatched 
+    return 'false'
+
+
+#print(checkOrder(input='engineers rock' ,pattern= 'gsr'))
+
+def winner_of_election(votes):
+  # If there is tie, print a lexicographically smaller name.(sort it using ascending)
+  pass
+  max_votes = {}
+  for i in votes:
+    if i in max_votes:
+      max_votes[i] += 1
+    else:  
+      max_votes[i] = 1
+
+  print(max_votes)
+
+  value = max(max_votes.values())
+  
+  winner = [a for a,b in max_votes.items() if b == value]
+  print(winner[0])
+
+
+# winner_of_election(votes =['john','johnny','jackie','johnny','john','jackie', 
+#     'jamie','jamie','john','johnny','jamie','johnny','john']  
+#   )
+
+def dict_sort():
+  pass
+  key_value ={}     
+  
+# Initializing value  
+  key_value[2] = 56       
+  key_value[1] = 2 
+  key_value[5] = 12 
+  key_value[4] = 24
+  key_value[6] = 18      
+  key_value[3] = 323 
+  print(key_value)
+
+  # for i in sorted(key_value.keys()):
+  #   print(i, key_value[i])
+
+  print(sorted(key_value.items(), key = lambda x: x[1]))
+    
+#dict_sort()
+
+def dict_multiple_inputs():
+
+    dict = {} 
+      
+    # Insert first triplet in dictionary 
+    x, y, z = 10, 20, 30
+    dict[x, y, z] = x + y - z; 
+      
+    # Insert second triplet in dictionary 
+    x, y, z = 5, 2, 4
+    dict[x, y, z] = x + y - z; 
+      
+    # print the dictionary 
+    print(dict)   
+
+#dict_multiple_inputs()
+
+def anagrams():
+	#one more logic to be witten is number of characters should match 
+	word = sorted('rac')
+	alternatives = ['car', 'girl', 'tofu', 'rca']
+
+	for alt in alternatives:
+		if word == sorted(alt):
+			print(word, sorted(alt), alt )
+#anagrams()
+
+def kth_non_repeating_word(strg, k):
+	pass
+	d = {}
+	for i in strg:
+		if i in d: d[i] +=  1
+		else: d[i] = 1
+	print(d)	
+	non_rep = [i for i,j in d.items() if j == 1]
+	print(non_rep[k-1])
+
+#kth_non_repeating_word(strg = 'geeksforgeeks', k = 2)
+
+def largest_anagram_size(input):
+	pass
+	l_input = input.split()
+	#print(l_input)
+	d_large={}
+	for i in l_input:
+		print(i, ''.join(sorted(i)) )
+		if  ''.join(sorted(i)) in d_large:
+			d_large[''.join(sorted(i))] += 1
+		else:
+			d_large[''.join(sorted(i))] = 1
+
+	large_size=max(d_large.values())
+	print(large_size)
+		
+#largest_anagram_size(input='cars bikes arcs steer ')
+
+def duplicate_words(w):
+	pass
+	print(' '.join(set(w.split())))
+#duplicate_words(w= 'Python is great and Java is also great')
+
+def mirror_chars(s):
+	pass
+
+def isPall(s): 
+    return s[::-1]==s
+
+
+def count_palindrome():
+	s=str(input("enter the string:-"))
+
+	for i in range(1, len(s)+1): 
+		start = 0 
+		end = i 
+		while end<len(s)+1: 
+			if isPall(s[start:end]): 
+				print(s[start:end]) 
+			start+=1 
+			end+=1
