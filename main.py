@@ -1,4 +1,5 @@
 from collections import defaultdict, OrderedDict, Counter 
+from itertools import permutations 
 
 
 def list_of_tuples(l):
@@ -295,3 +296,70 @@ def key_associated_with_values(test_dict):
 			res[ele].append(key) 
 	print(res)
 #key_associated_with_values(test_dict = {'abc': [10, 30], 'bcd' : [30, 40, 10]})
+
+def reverse_a_word(w):
+	pass
+	print(w.split(' '))
+	list_words = w.split(' ')
+	for i in range(len(list_words), 0, -1):
+		print(list_words[i-1])
+
+#reverse_a_word(w= "geeks quiz practice code")
+
+def word_frequencty(wf):
+	pass
+	dict = Counter(wf.split(' '))
+	print(dict)
+
+#word_frequencty(wf ='Gfg is best . Geeks are good and Geeks like Gfg')
+
+def uncommon_words(A,B):
+	pass
+
+	print(set(A.split(' ')).symmetric_difference(set(B.split(' '))))
+
+#uncommon_words(A= "Geeks for Geeks" ,B="Learning from Geeks for Geeks")
+
+def permutation_of_string(ps):
+	pass
+	pts = permutations(ps)
+	
+	for w in pts:
+		print(''.join(list(w)))
+
+#permutation_of_string(ps='ABC')
+
+def remove_duplicate_occurances(rdo, repl_dict):
+	pass
+	count = set()
+	test_split= rdo.split()
+	for i, v in enumerate(test_split):
+		if v in repl_dict:
+			if v in count:
+				test_split[i] = repl_dict[v]
+			else:
+				count.add(v)
+	print(test_split)
+
+			
+
+# remove_duplicate_occurances(rdo= 'Gfg is best . Gfg also has Classes now. Classes help understand better', repl_dict = {'Gfg' :  'It', 'Classes' : 'They' } )
+
+def replace_string_to_make_empty(str, sub_str):
+	pass
+	res = str.replace(sub_str,'')
+	res = res.replace(sub_str,'')
+
+#replace_string_to_make_empty( str = "GEEGEEKSKS", sub_str = "GEEKS")
+
+def rotate_string(s, d):
+	pass
+	lr_f = s[:d]
+	left_final= s[d:]+lr_f
+	print(left_final)
+
+	r_f = s[len(s)-d:]
+	print(r_f)
+	right_final = r_f + s[:len(s)-d] 
+	print(right_final)
+#rotate_string(s= "GeeksforGeeks", d=2)
