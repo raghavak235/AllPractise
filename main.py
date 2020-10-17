@@ -1,4 +1,5 @@
-from collections import defaultdict, OrderedDict 
+from collections import defaultdict, OrderedDict, Counter 
+
 
 def list_of_tuples(l):
     list_cubes = [(i, i**3) for i in l]
@@ -220,18 +221,77 @@ def duplicate_words(w):
 def mirror_chars(s):
 	pass
 
-def isPall(s): 
-    return s[::-1]==s
+# def isPall(s): 
+#     return s[::-1]==s
 
 
-def count_palindrome():
-	s=str(input("enter the string:-"))
+# def count_palindrome(s):
+# 	#s=str(input("enter the string:-"))
 
-	for i in range(1, len(s)+1): 
-		start = 0 
-		end = i 
-		while end<len(s)+1: 
-			if isPall(s[start:end]): 
-				print(s[start:end]) 
-			start+=1 
-			end+=1
+# 	for i in range(1, len(s)+1): 
+# 		start = 0 
+# 		end = i 
+# 		while end<len(s)+1: 
+# 			if isPall(s[start:end]): 
+# 				print(s[start:end]) 
+# 			start+=1 
+# count_palindrome(s='madam')
+
+def rearranging_characters(s1,s2):
+	pass
+	c=0
+	for i in s1:
+		if i in s2:
+			c +=1
+	if len(s1) == c:
+		print('Possible')
+	else:
+		print('Not Possible')
+
+
+#rearranging_characters(s1='GeeksforGeeks',s2='rteksfoGrdsskGeggehes')
+
+def count_frequencies(string):
+	pass
+	   # calculate frequency of each character 
+    # and convert string into dictionary 
+	dict=Counter(string) 
+  
+    # now get list of all values and push it 
+    # in set 
+	same = list(set(dict.values())) 
+	print(same, len(same))
+
+	if len(same)>2: 
+		print('No') 
+	elif len (same)==2 and same[1]-same[0]>1: 
+		print('No') 
+	else: 
+		print('Yes') 
+
+#count_frequencies(string = 'xyyzz')
+
+def Possible_words(dicty, arr):
+	pass
+	for word in dicty:
+		dict_word = Counter(word)
+		#print(dict_word)
+		flag = 1
+		for key in dict_word.keys():
+			if key not in arr:
+				flag=0
+		if flag == 1:
+			print(word)
+
+
+# Possible_words(dicty=["go","bat","me","eat","goal","boy", "run"],
+# arr= ['e','o','b', 'a','m','g', 'l'])
+
+def key_associated_with_values(test_dict):
+	pass
+	res = defaultdict(list)
+	for key,value in test_dict.items():
+		for ele in value:
+			res[ele].append(key) 
+	print(res)
+#key_associated_with_values(test_dict = {'abc': [10, 30], 'bcd' : [30, 40, 10]})
