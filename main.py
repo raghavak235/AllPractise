@@ -427,3 +427,112 @@ def palindrome_count(pc):
 
 #palindrome_count(pc='madam')
 
+def factorial(f):
+	pass
+	if f == 1 or 0:
+		print(1)
+	elif f > 1:
+		mul = 1
+		while f > 1:
+			
+			mul *= f
+			f = f-1
+		print(mul)
+
+	if f == 0 or f ==1:
+		return 1
+	else:
+		return f * factorial(f-1)
+#print(factorial(f=4))
+
+def check_prime_number(num):
+	pass
+	if num == 1:
+		return False
+	for i in range(2, num):
+		if (num%i) == 0:
+			return False
+		return True
+
+
+#print(check_prime_number(num=23))
+
+def prime_number_interval(start, end):
+	pass
+	for i in range(start, end):
+		print(i)
+		if i > 1:
+			for j in range(2, i):
+				if(i % j==0): break
+			else:
+				print('A Prime Number:', i)
+
+
+#prime_number_interval(start=11, end=25)
+
+def Fibonacci_number(n):
+	pass
+	a = 0
+	b = 1
+	if n == 0:
+		return 0
+	elif n == 1:
+		return b
+	elif n > 1:
+		for i in range(2, n):
+			c = a + b
+			#print(c)
+			a = b
+			#print(a,b)
+			b = c
+			#print(b,c)
+		return b
+
+	# if n<0:
+	# 	print("Incorrect input")
+	# # First Fibonacci number is 0
+	# elif n==1:
+	# 	return 0
+	# # Second Fibonacci number is 1
+	# elif n==2:
+	# 	return 1
+	# else:
+	# 	return Fibonacci_number(n-1)+Fibonacci_number(n-2)
+#print(Fibonacci_number(n=9))
+
+def check_armstrong_number(num):
+	pass
+	sum = 0
+
+	# find the sum of the cube of each digit
+	temp = num
+	while temp > 0:
+		digit = temp % 10
+		#print(digit)
+		sum += digit ** 3
+		temp //= 10
+		print(temp)
+
+	# display the result
+	if num == sum:
+		print(num,"is an Armstrong number")
+	else:
+		print(num,"is not an Armstrong number")
+
+#check_armstrong_number(num=153)
+
+
+lst1 = [1,2,3,4,'a','v','d',[1,2,3,[14,13,12],'as','sd0','sd1'],'a',[2.4,5]] 
+lst2 = [10,20,30,40,'a','v','d',[1,2,3,[14,13,12],'as','sd0','sd1'],'a',[2.4,5]] 
+newlist = [] 
+def nestedlists(lst, newlist=None): 
+	if newlist is None: 
+  	  newlist= [] 
+	for i in lst: 
+		if type(i)!=list: 
+			newlist.append(i) 
+		else: 
+			nestedlists(i, newlist) 
+	return newlist 
+# print(nestedlists(lst1)) 
+# print(nestedlists(lst2)) 
