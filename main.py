@@ -222,21 +222,6 @@ def duplicate_words(w):
 def mirror_chars(s):
 	pass
 
-# def isPall(s): 
-#     return s[::-1]==s
-
-
-# def count_palindrome(s):
-# 	#s=str(input("enter the string:-"))
-
-# 	for i in range(1, len(s)+1): 
-# 		start = 0 
-# 		end = i 
-# 		while end<len(s)+1: 
-# 			if isPall(s[start:end]): 
-# 				print(s[start:end]) 
-# 			start+=1 
-# count_palindrome(s='madam')
 
 def rearranging_characters(s1,s2):
 	pass
@@ -363,3 +348,82 @@ def rotate_string(s, d):
 	right_final = r_f + s[:len(s)-d] 
 	print(right_final)
 #rotate_string(s= "GeeksforGeeks", d=2)
+
+def reverse_a_list(rl):
+	rl.reverse()
+	print(rl)
+
+	for i in range(len(rl), 0, -1):
+		print(rl[i-1])
+
+#reverse_a_list(rl=[10, 11, 12, 13, 14, 15] )
+
+
+def sort_one_list_using_other(l1, l2):
+	pass
+	s_pairs = zip(l2, l1)
+	#print(sorted(s_pairs))
+	sorted_list = [b for a,b in sorted(s_pairs)]
+	print(sorted_list)
+
+# sort_one_list_using_other(l1= ["a", "b", "c", "d", "e", "f", "g", "h", "i"], l2= [ 0,   1,   1,    0,   1,   2,   2,   0,   1])
+
+
+def n_largest_numbers(input, N):
+	pass
+	lar_list = sorted(input, reverse=True)
+	print(lar_list[:N])
+#n_largest_numbers(input=[81, 52, 45, 10, 3, 2, 96]  , N=3)
+
+
+def second_largest_in_list(list1):
+	pass
+	first = second = list1[0]
+	
+	for i in range(1, len(list1)):
+	#	print(list1[i])
+		if list1[i] > first:
+			second = first
+			first = list1[i]
+		elif list1[i] > second and  list1[i] < first:
+			second =  list1[i]
+			
+
+	print(first, second)
+
+
+#second_largest_in_list(list1 =[12, 45, 2, 41, 31, 10, 8, 6, 4])
+
+
+def sort_list_without_inbuilt_funcs(numlist):
+	pass
+	for i in range(len(numlist)):
+		for j in range(i+1, len(numlist)):
+			print(i,j)
+			if numlist[i] >  numlist[j]:
+				temp = numlist[i]
+				numlist[i] =numlist[j]
+				numlist[j] = temp
+	
+	print(numlist)
+#sort_list_without_inbuilt_funcs(numlist=[86,67,34,55])
+
+
+def isPall(s): 
+    return s[::-1]==s
+
+
+def palindrome_count(pc):
+	pass
+	s = pc
+	for i in range(1, len(s)):
+		start =0 
+		end = i
+		while end <= len(s):
+			if isPall(s[start:end]):
+				print('Palindrome', s[start:end])
+			start += 1
+			end += 1
+
+#palindrome_count(pc='madam')
+
