@@ -536,3 +536,17 @@ def nestedlists(lst, newlist=None):
 	return newlist 
 # print(nestedlists(lst1)) 
 # print(nestedlists(lst2)) 
+
+def multiples_5_and_7(n):
+	pass
+	for i in range(n):
+		if i%5 ==0 and i%7==0:
+			print('in 5 and 7')
+		elif i%5 ==0:
+			print('in 5')
+		elif i%7 ==0:
+			print('in 7')
+		else:
+			print(i)
+
+#multiples_5_and_7(n=100)
