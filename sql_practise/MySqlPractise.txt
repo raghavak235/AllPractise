@@ -1,0 +1,61 @@
+create database if not exists Exercise;
+show databases;
+use exercise;
+select database()
+
+describe orders
+
+CREATE TABLE  if not exists customers (
+    CustomerID int,
+    CustomerName varchar(255),
+    ContactName varchar(255),
+    Address varchar(255),
+    City varchar(255),
+    PostalCode int, 
+    Country varchar(255)
+    
+);
+
+create table orders (
+ orderid int,
+ customerid int,
+ employerid int,
+ orderdate DATE ,
+ shipperid int
+ )
+
+INSERT INTO Customers (CustomerID, CustomerName, ContactName ,Address, City, PostalCode, Country)
+VALUES (1, 'Tom B. Erichsen', 'Skagen 21', 'Stavanger','PS', 4006, 'Norway');
+
+INSERT INTO Customers (CustomerID, CustomerName, ContactName ,Address, City, PostalCode, Country)
+VALUES (5, 'Sam', 'k', 'steve', 'KS','4006', 'Norway');
+
+INSERT INTO Customers (CustomerID, CustomerName, ContactName ,Address, City, PostalCode, Country)
+VALUES (6, 'Sas', 'ks', 'steves', 'MS','4006', 'Norway');
+INSERT INTO Customers (CustomerID, CustomerName, ContactName ,Address, City, PostalCode, Country)
+VALUES (7, 'Samk', 'sk', 'meve', 'TS','4006', 'Norway');
+
+
+
+insert into orders VALUES (1024, 5, 4, '1996-07-04', 1);
+insert into orders VALUES (1025, 6, 5, '1996-07-05', 2);
+insert into orders VALUES (91026, 7, 4, '1996-07-06', 3);
+insert into orders VALUES (91027, 1, 4, '1996-07-07', 4);
+
+
+UPDATE orders
+SET employerid=5, shipperid = 5
+WHERE orderdate='1996-07-06';
+
+
+select  * from orders where employerid = 4 and (orderdate = '1996-07-04' or orderdate= '1996-07-05')
+select * from orders ORDER BY orderdate DESC;
+select * from orders ORDER BY orderdate, customerid;
+select * from orders ORDER BY orderdate ASC, shipperid DESC;
+select  * from orders where employerid is NULL;
+select  * from orders where employerid is NOT NULL;
+
+delete from orders;
+select * from orders;
+
+delete from orders where employerid =5;
