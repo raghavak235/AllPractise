@@ -59,3 +59,42 @@ delete from orders;
 select * from orders;
 
 delete from orders where employerid =5;
+
+use exercise;
+select min(orderid) from orders;
+select max(orderid) from orders;
+select SUM(orderid) from orders;
+select avg(orderid) from orders  where employerid IS NOT NULL;
+select count(orderid) from orders where employerid IS NOT NULL;
+
+
+% - The percent sign represents zero, one, or multiple characters
+_ - The underscore represents a single character
+select * from customers;
+select * from customers where CustomerName LIKE 'T%';
+select * from customers where CustomerName LIKE '__s';
+
+
+
+select * from customers;
+select * from orders;
+-- select * from customers JOIN  ORDERS ON customers.CustomerID = orders.customerid;
+
+NO DIRECT FULL OUTER JOIN:
+ALTERNATIVE: https://www.xaprb.com/blog/2006/05/26/how-to-write-full-outer-join-in-mysql/
+select A.customerid as CustomerID, B.employerid, A.orderdate as EmployerID from orders A, orders B where A.customerid = B.employerid order by A.orderdate DESC
+
+
+select CustomerID from customers 
+UNION 
+select customerid from orders
+order by CustomerID;
+
+
+select CustomerID from customers 
+UNION ALL
+select customerid from orders
+order by CustomerID;
+
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
