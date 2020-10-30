@@ -550,3 +550,54 @@ def multiples_5_and_7(n):
 			print(i)
 
 #multiples_5_and_7(n=100)
+
+def convert_binary_integer(b):
+	int_value = int(b)
+	print(int_value)
+
+#convert_binary_integer(b='1000')
+
+
+def string_to_ascii(s):
+	pass
+	ascii_value = [str(ord(i)) for i in s]
+	print(''.join(ascii_value))
+
+#string_to_ascii(s='abcd')
+
+
+def tuples_comparision(t1,t2):
+	pass
+	#all(x < y for x, y in zip(test_tup1, test_tup2)) 
+	unique_val = [i for i in t1 if i not in t2]
+	print(unique_val)
+
+#tuples_comparision(t1=(1,2,3),t2=(1,4,5,))
+
+def set_comparision(s1, s2):
+	pass
+	#s.symmetric_difference(t) new set with elements in either s or t but not both
+	#s.difference_update(t) return set s after removing elements found in t
+	#s.symmetric_difference_update(t) return set s with elements from s or t but not both
+	# _update method updates the original set
+
+	intersection = s1.intersection(s2)
+	difference = s1.difference(s2)
+	union = s1.union(s2)
+	symmertic_difference = s1.symmetric_difference(s2)
+	#difference_update = s1.difference_update(s2)
+	#symmertic_difference_update = s2.symmetric_difference_update(s1)
+	print(intersection,difference,union,symmertic_difference)
+	print(difference, s1)
+	print(s1.issubset(s2))
+	print(s1.issuperset(s2))
+
+#set_comparision(s1={1,2,3}, s2={1,2,3,4,5,6})
+
+def remove_blank_lines(t):
+	pass
+	lines = [s.strip() for s in t.split("\n") if s.strip()]
+	print(lines)
+# remove_blank_lines(t='hi there here is\na big line\n\nof empty\nline\neven some with spaces\n     \nlike that\n\n    \nokay now what?\n' 
+# )
+
