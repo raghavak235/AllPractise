@@ -98,3 +98,13 @@ order by CustomerID;
 
 The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
 
+
+
+--------------------------------------------------------------------------------
+https://database.guide/left-vs-substring-in-sql-server-whats-the-difference/#:~:text=each%20function%20does%3A-,LEFT(),%2C%20text%2C%20or%20image%20expression.
+
+https://stackoverflow.com/questions/45218002/locate-vs-instr#:~:text=The%20INSTR()%20function%20returns,a%20string%20in%20another%20string.&text=The%20INSTR()%20function%20starts,to%20change%20the%20starting%20position.
+
+https://www.w3schools.com/sql/func_mysql_binary.asp
+
+https://www.tutorialspoint.com/What-is-the-difference-between-CONCAT-and-CONCAT-WS-functions#:~:text=Both%20CONCAT()%20and%20CONCAT_WS,no%20concept%20of%20the%20separator.
