@@ -601,3 +601,10 @@ def remove_blank_lines(t):
 # remove_blank_lines(t='hi there here is\na big line\n\nof empty\nline\neven some with spaces\n     \nlike that\n\n    \nokay now what?\n' 
 # )
 
+def modulus_division(n1,n2):
+	pass
+	print(n1%n2)
+	print(n1//n2)
+
+modulus_division(n1=-12,n2=10)
+
