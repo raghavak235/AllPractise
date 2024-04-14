@@ -37,7 +37,6 @@ def gen_list_tuple(nums):
     print(lst)
     print(tuple(lst))
 
-gen_list_tuple(nums='34,67,55,33,12,98')
 
 # Question: Define a class which has at least two methods: getString: to get a string from console input printString: to print the string in upper case. Also please include simple test function to test the class methods.
 class getandprint:
@@ -132,3 +131,49 @@ def remove_duplicates():
     s = list(set(l))
     print((sorted(s)))
     return ' '.join(sorted(s))
+
+# Question:
+# Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
+
+def div_5():
+    numbers = input("Enter digits")
+    # CONVERTING BINARY TO INTEGER 1
+    # To convert binary number into Decimal, we have to use the python built-in int function, which takes the binary number and the base of number system as an argument.
+    # Syntax: int(string, base) int(i,2)
+
+    int_num = [i for i in numbers.split(',')]
+    output_nums = []
+    for n in int_num:
+        if int(n,2)%5 == 0:
+            output_nums.append(str(n))
+    print(','.join(output_nums))
+
+# Question:
+# Write a program, which will find all such numbers between 1000 and 3000 (both included) such that each digit of the number is an even number.
+# The numbers obtained should be printed in a comma-separated sequence on a single line.
+# To retrieve each digit of a number in Python, you can convert the number to a string and then iterate over each character of the string. Here's how you can do it:
+# Method 1: Using string manipulation
+# number = 12345
+# digits = [int(digit) for digit in str(number)]
+# print(digits)  # Output: [1, 2, 3, 4, 5]
+#
+# # Method 2: Using arithmetic operations
+# number = 12345
+# digits = []
+# while number > 0:
+#     digit = number % 10
+#     digits.insert(0, digit)  # Insert at the beginning of the list to maintain order
+#     number //= 10
+# print(digits)  # Output: [1, 2, 3, 4, 5]
+
+
+def each_digit_is_even():
+    values = []
+    for e in range(1000, 1000+3):
+        digits = [int(i) for i in str(e)]
+        print(digits)
+        for d in digits:
+            if d%2==0:
+                values.append(d)
+    print(values)
+
