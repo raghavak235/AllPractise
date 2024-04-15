@@ -177,3 +177,74 @@ def each_digit_is_even():
                 values.append(d)
     print(values)
 
+# Question:
+# Write a program that accepts a sentence and calculate the number of letters and digits.
+# Suppose the following input is supplied to the program:
+# hello world! 123
+
+def count_cases():
+    d={"UPPER CASE":0, "LOWER CASE":0}
+    sen=input("Enter something: ")
+
+    for s in sen:
+        # print('s', s)
+        if s.isupper():
+            print('up',s)
+            d["UPPER CASE"] += 1
+
+        elif s.islower():
+            print('lp', s)
+            d["LOWER CASE"]+=1
+        else:
+            pass
+            print('no condition')
+    print("UPPER CASE", d["UPPER CASE"])
+    print("LOWER CASE", d["LOWER CASE"])
+# count_cases()
+
+# Question:
+# Write a program that accepts a sentence and calculate the number of letters and digits.
+# Suppose the following input is supplied to the program:
+# hello world! 123
+# Then, the output should be:
+# LETTERS 10
+# DIGITS 3
+
+# digits should measure with isalpha()
+# isalpha()
+def digits_count():
+    s = input()
+    d={"DIGITS":0, "LETTERS":0}
+    for c in s:
+        if c.isdigit():
+            d["DIGITS"]+=1
+        elif c.isalpha():
+            d["LETTERS"]+=1
+        else:
+            pass
+    print ("LETTERS", d["LETTERS"])
+    print ("DIGITS", d["DIGITS"])
+
+# Question:
+# Write a program that computes the value of a+aa+aaa+aaaa with a given digit as the value of a.
+# Suppose the following input is supplied to the program:
+# We need to evaluate the expression a + aa + aaa + aaaa. Each term of this expression is formed by repeating the digit a a certain number of times:
+#
+# a: Appears once.
+# aa: Appears twice.
+# aaa: Appears three times.
+# aaaa: Appears four times.
+def compute_value(a):
+    # Construct each term
+    term1 = int(a)
+    term2 = int(a * 2)
+    term3 = int(a * 3)
+    term4 = int(a * 4)
+
+    # Sum the terms
+    total = term1 + term2 + term3 + term4
+    return total
+
+
+
+
