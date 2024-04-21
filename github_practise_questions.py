@@ -1,5 +1,6 @@
 # Level 1
 import math
+import re
 
 
 # Question: Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included). The numbers obtained should be printed in a comma-separated sequence on a single line.
@@ -281,12 +282,25 @@ def bank_account():
 def pass_criteria():
     input_str = input("")
     if input_str:
-        items = [i.split()  for i in input_str]
-        for passwd in items:
+        items = input_str.split(",")
+        for password in items:
+            if len(password) < 6 or len(password) > 12:
+                return False
+
+            if not re.search("[a-z]", password):
+                return False
+
+            if not re.search("[A-Z]", password):
+                return False
+
+            if not re.search("[0-9]", password):
+                return False
+
+            if not re.search("[$#@]", password):
+                return False
+
+            return password
             pass
-
-
-
 
 
 
