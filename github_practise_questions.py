@@ -247,4 +247,133 @@ def compute_value(a):
 
 
 
+# Question:
+# Write a program that computes the net amount of a bank account based a transaction log from console input. The transaction log format is shown as following:
+# D 100
+# W 200
 
+def bank_account():
+    netAmount = 0
+    while True:
+        s = input()
+        if not s:
+            break
+        values = s.split(" ")
+        operation = values[0]
+        amount = int(values[1])
+        if operation == "D":
+            netAmount += amount
+        elif operation == "W":
+            netAmount -= amount
+        else:
+            pass
+    print(netAmount)
+
+# Question:
+# A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
+# Following are the criteria for checking the password:
+# 1. At least 1 letter between [a-z]
+# 2. At least 1 number between [0-9]
+# 1. At least 1 letter between [A-Z]
+# 3. At least 1 character from [$#@]
+# 4. Minimum length of transaction password: 6
+# 5. Maximum length of transaction password: 12
+def pass_criteria():
+    input_str = input("")
+    if input_str:
+        items = [i.split()  for i in input_str]
+        for passwd in items:
+            pass
+
+
+
+
+
+
+
+
+
+
+# Question:
+# You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
+# 1: Sort based on name;
+# 2: Then sort based on age;
+# 3: Then sort by score.
+# The priority is that name > age > score.
+# itemgetter is a function from the operator module in Python. It is used to retrieve items or fields from an object such as a list, tuple, or dictionary.
+# In the context of sorting, itemgetter can be used as a key function to specify which item(s) should be used for sorting. When sorting a list of tuples, for example, you can pass itemgetter the index of the item you want to sort by. It will then return a callable object that can be used as the key parameter for sorting functions like sorted() or list.sort().
+# you can achieve the same result using lambda functions instead of itemgetter. Here's how you can modify the sorting function to use lambda functions:\
+# sorted(tuples, key=lambda x: (x[0], x[1], x[2]))
+# In this version, lambda x: (x[0], x[1], x[2]) creates an anonymous function that takes a tuple x as input and returns a tuple containing the elements at indices 0, 1, and 2 of x. This effectively replicates the behavior of itemgetter(0, 1, 2).
+
+
+def input_sorted():
+    l = []
+    while True:
+        input_txt= input("Enter name, age, and score separated by space: ")
+        if not input_txt:
+            break
+        l.append(tuple(input_txt.split(',')))
+
+        print(l)
+    print(sorted(l, key=lambda x:(x[0], x[1], x[2])))
+# input_sorted()
+
+
+# Question:
+# Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n.
+
+def generate_numbers(n):
+    for i in range(n):
+        if i % 7 == 0:
+            yield i
+
+# for j in generate_numbers(10):
+#     print(j)
+
+
+# Question
+# A robot moves in a plane starting from the original point (0,0). The robot can move toward UP, DOWN, LEFT and RIGHT with a given steps. The trace of robot movement is shown as the following:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+# The numbers after the direction are steps. Please write a program to compute the distance from current position after a sequence of movement and original point. If the distance is a float, then just print the nearest integer.
+# Example:
+# If the following tuples are given as input to the program:
+# UP 5
+# DOWN 3
+# LEFT 3
+# RIGHT 2
+# Then, the output of the program should be:
+# 2
+
+# In a typical Cartesian coordinate system:
+# Moving up along the y-axis means increasing the y-coordinate.
+# Moving down along the y-axis means decreasing the y-coordinate.
+# Moving left along the x-axis means decreasing the x-coordinate.
+# Moving right along the x-axis means increasing the x-coordinate.
+# After processing all movements, it calculates the distance from the original point using the Pythagorean theorem:
+# math.sqrt(x ** 2 + y ** 2)
+
+def robot_moves():
+    position =[0,0]
+    while True:
+        s = input()
+        if not s:
+            break
+        moment = s.split(' ')
+        direction = moment[0]
+        distance = int(moment[1])
+        if direction == 'UP':
+            position[1] += distance
+        elif direction == 'DOWN':
+            position[1] -= distance
+        elif direction == 'LEFT':
+            position[0] -= distance
+        elif direction == 'RIGHT':
+            position[0] += distance
+    # print(position)
+    print(int(round(math.sqrt(position[0] ** 2 + position[1] ** 2))))
+
+    pass
