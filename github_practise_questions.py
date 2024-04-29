@@ -1,6 +1,10 @@
+# https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+
 # Level 1
 import math
 import re
+
+from distlib.compat import raw_input
 
 
 # Question: Write a program which will find all such numbers which are divisible by 7 but are not a multiple of 5, between 2000 and 3200 (both included). The numbers obtained should be printed in a comma-separated sequence on a single line.
@@ -303,11 +307,6 @@ def pass_criteria():
             pass
 
 
-
-
-
-
-
 # Question:
 # You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
 # 1: Sort based on name;
@@ -391,3 +390,59 @@ def robot_moves():
     print(int(round(math.sqrt(position[0] ** 2 + position[1] ** 2))))
 
     pass
+
+
+# Question:
+# Write a program to compute the frequency of the words from the input. The output should output after sorting the key alphanumerically.
+# Suppose the following input is supplied to the program:
+# New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.
+# Then, the output should be:
+# 2:2
+# 3.:1
+# 3?:1
+# New:1
+# Python:5
+# Read:1
+# and:1
+# between:1
+# choosing:1
+# or:2
+# to:1
+
+def alphanumeric_frequency_sort():
+    frequency_word = input('Enter the words')
+    output = {}
+    for w in frequency_word.split(' '):
+        # we need to also count the existing frequency count in output output.get(w,0) + 1
+        output[w] = output.get(w,0) + 1
+    print(output)
+
+    words = output.keys()
+    sort_words = sorted(words)
+    print(sort_words)
+    for s in sort_words:
+        print("{}:{}".format(s, output.get(s)))
+
+# alphanumeric_frequency_sort()]
+
+
+# Question:
+#     Write a method which can calculate square value of number
+#
+# Hints:
+#     Using the ** operator
+def square(a):
+    return  a ** 2
+
+
+# Question:
+# Python has many built-in functions, and if you do not know how to use it, you can read document online or find some books. But Python has a built-in document function for every built-in functions.
+#     Please write a program to print some Python built-in functions documents, such as abs(), int(), raw_input()
+#     And add document for your own function
+
+# The built-in document method is __doc__
+
+def built_in_docs():
+    print(abs.__doc__)
+    print(int.__doc__)
+    print(raw_input.__doc__)
