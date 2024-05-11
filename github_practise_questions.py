@@ -1,4 +1,5 @@
 # https://github.com/zhiwehu/Python-programming-exercises/blob/master/100%2B%20Python%20challenging%20programming%20exercises.txt
+# https://github.com/Tanu-N-Prabhu/Python/blob/master/Python%20Coding%20Interview%20Prep/Python%20Coding%20Interview%20Questions%20(Beginner%20to%20Advanced).md
 
 # Level 1
 import math
@@ -446,3 +447,53 @@ def built_in_docs():
     print(abs.__doc__)
     print(int.__doc__)
     print(raw_input.__doc__)
+
+
+# Question: Define a class, which have a class parameter and have a same instance parameter.
+
+class Person:
+    name = "Person"
+    def __init__(self, name=None):
+        self.name = name
+
+
+# Question:
+# Define a function which can compute the sum of two numbers.
+
+def sum_nums(x,y):
+    return x+ y
+
+# Question:
+# Define a function that can convert a integer into a string and print it in console.
+
+def casting(a):
+    str(a)
+
+
+# Question:
+# With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
+
+def given_tuple():
+    t=(1,2,3,4,5,6,7,8,9,10)
+    print(t[0:5])
+    print(t[5:])
+
+
+# Question:
+# Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
+
+# string1 = "Hello"
+# string2 = "123"
+# string3 = "Hello123"
+#
+# print(string1.isalpha())  # Output: True
+# print(string2.isalpha())  # Output: False
+# print(string3.isalpha())  # Output: False
+
+def is_string():
+    t='123'
+    if t.isalpha():
+        print("YES")
+    elif isinstance(t, str):
+        print('YES')
+
