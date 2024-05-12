@@ -497,3 +497,30 @@ def is_string():
     elif isinstance(t, str):
         print('YES')
 
+# Question:
+# Write a program which can filter even numbers in a list by using filter function. The list is: [1,2,3,4,5,6,7,8,9,10].
+
+def filter_even():
+    values=[1,2,3,4,5,6,7,8,9,10]
+    even_values = filter(lambda x: x%2==0, values)
+
+
+# Question:
+# Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+
+def map_list():
+    l= [1,2,3,4,5,6,7,8,9,10]
+    print(map(lambda x: x**2, l))
+
+# Question:
+# Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+
+def map_filter():
+    l = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    map(lambda x: x**2, filter(lambda x: x%2==0,l))
+
+# Question:
+# Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+
+def numbers():
+    print(list(filter(lambda x: x%2==0, range(1,21))))
