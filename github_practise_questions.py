@@ -275,38 +275,6 @@ def bank_account():
             pass
     print(netAmount)
 
-# Question:
-# A website requires the users to input username and password to register. Write a program to check the validity of password input by users.
-# Following are the criteria for checking the password:
-# 1. At least 1 letter between [a-z]
-# 2. At least 1 number between [0-9]
-# 1. At least 1 letter between [A-Z]
-# 3. At least 1 character from [$#@]
-# 4. Minimum length of transaction password: 6
-# 5. Maximum length of transaction password: 12
-def pass_criteria():
-    input_str = input("")
-    if input_str:
-        items = input_str.split(",")
-        for password in items:
-            if len(password) < 6 or len(password) > 12:
-                return False
-
-            if not re.search("[a-z]", password):
-                return False
-
-            if not re.search("[A-Z]", password):
-                return False
-
-            if not re.search("[0-9]", password):
-                return False
-
-            if not re.search("[$#@]", password):
-                return False
-
-            return password
-            pass
-
 
 # Question:
 # You are required to write a program to sort the (name, age, height) tuples by ascending order where name is string, age and height are numbers. The tuples are input by console. The sort criteria is:
@@ -582,3 +550,32 @@ class Square(Shape):
         return self.length * self.length
 
 
+# Please raise a RuntimeError exception.
+
+def raise_exp():
+    try:
+        pass
+    except Exception as e:
+        raise RuntimeError('some error')
+
+
+# Define a custom exception class which takes a string message as attribute.
+
+# Hints:
+# To define a custom exception, we need to define a class inherited from Exception.
+
+
+class Error(Exception):
+    def __init__(self, msg):
+        self.msg = msg
+
+# Write a program to compute 1/2+2/3+3/4+...+n/n+1 with a given n input by console (n>0).
+#
+# Example:
+# If the following n is given as input to the program:
+#
+# 5
+#
+# Then, the output of the program should be:
+#
+# 3.55
