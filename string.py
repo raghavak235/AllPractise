@@ -102,3 +102,138 @@ def upper_case_half_string(input_string):
     print(half_str_length)
     print(input_string[0:half_str_length]+input_string[half_str_length:].upper())
 
+# Python program to capitalize the first and last character of each word in a string
+
+# IF YOU WANT TO ACCESS THE STRING USING SLICING
+# first char =i[0]
+# middle char = i[1:-1] doesnt include last char
+# last char = i[-1]
+def first_last_char(input_string):
+    for i in input_string.split():
+        print(i[0].upper()+i[1:-1]+i[-1].upper())
+
+
+# Python program to check if a string has at least one letter and one number
+# Letters can be checked in Python String using the isalpha() method and
+# numbers can be checked using the isdigit() method.
+def check_string(input_string):
+    output = []
+    for i in input_string:
+        if i.isdigit():
+            output.append('digit')
+        elif i.isalpha():
+            output.append('char')
+
+    if output.count('digit')  >= 1 and output.count('char') >= 1:
+        print(True)
+    else:
+        print(False)
+
+
+# ANOTHER LOGIC
+    flag_1 = False
+    flag_2 = False
+    for i in input_string:
+        if i.isdigit():
+            flag_1 = True
+        elif i.isalpha():
+            flag_2 = True
+
+    print(flag_1 and flag_2)
+
+# Python Program to Accept the Strings Which Contains all Vowels
+
+def string_vowels(input_string):
+    input_string_low = input_string.lower()
+    vowles_dict = {'a':0, 'e':0, 'i':0, 'o':0,'u':0}
+    for v in vowles_dict:
+        if v in input_string_low:
+            vowles_dict[v] += 1
+
+    print(vowles_dict)
+    if not 0 in vowles_dict.values():
+        print(True)
+    else:
+        print(False)
+
+# Count the Number of matching characters in a pair of string
+# (consider the single count for the character which have duplicates in the strings).
+
+# Another logic, you can also take the string to covert to sets and remove duplicates/ unique
+
+def count_chars(input_string1, input_string2):
+    count_dict = []
+    for c in input_string1:
+        if c in input_string2 and c not in count_dict:
+            count_dict.append(c)
+    print(count_dict)
+
+# ANOTHER LOGIC
+    str1 = set(input_string1)
+    str2 = set(input_string2)
+    matching = str1.intersection(str2)
+    print(matching)
+
+# Python program to count number of vowels using sets in given string
+
+# Example: Retrieving Values from a Set
+# Initialize a set
+# my_set = {1, 2, 3, 4, 5}
+#
+# # Iterate over the set to retrieve values
+# for value in my_set:
+#     print(value)
+
+
+# In Python, the pop method for sets does not guarantee that it will return the last value added to the set.
+# Instead, pop removes and returns an arbitrary element from the set. Since sets in Python are unordered collections,
+# there is no concept of the "last" element in the way that there is with lists.
+#
+#
+# # Initialize a set
+# my_set = {1, 2, 3, 4, 5}
+#
+# # Retrieve and remove an arbitrary value from the set
+# retrieved_value = my_set.pop()
+# print(f"Retrieved value: {retrieved_value}")
+# print(f"Set after pop: {my_set}")
+
+
+def count_vowels(input_string):
+    count = 0
+    vowel = set('aeiou')
+    print(vowel)
+    for s in input_string:
+        if s in vowel:
+            count += 1
+
+    print(count)
+
+# Remove All Duplicates from a Given String in Python
+# We are given a string and we need to remove all duplicates from it.
+# What will be the output if the order of character matters?
+
+def remove_duplicates(input_string):
+    str_no_duplicates_no_order = ''.join(list(set(input_string)))
+    # print(str_no_duplicates_no_order)
+    new_str=''
+    for i in input_string:
+        if i not in  new_str:
+            new_str += i
+    print(new_str)
+
+ # Least Frequent Character in String
+
+def least_frequent_str(input_string):
+    count_dic = {}
+    for i in input_string:
+        if i not in count_dic:
+            count_dic[i]=1
+        else:
+            count_dic[i] += 1
+    print(count_dic)
+    min_value =  min(count_dic.values())
+    for k,v in count_dic.items():
+        if v == min_value:
+            print(k)
+
