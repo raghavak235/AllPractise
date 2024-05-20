@@ -237,3 +237,56 @@ def least_frequent_str(input_string):
         if v == min_value:
             print(k)
 
+# Maximum frequency character in String
+# methods to find the frequency of maximum occurring character in a python string.
+
+
+# The code max(all_freq, key=all_freq.get) finds the key with the maximum value in a Python dictionary all_freq.
+#
+# Here's a breakdown of how it works:
+#
+# all_freq: This represents a dictionary where keys are elements and values are their corresponding frequencies.
+# .get(key, default): This is a method of dictionaries that retrieves the value for a given key.
+# If the key doesn't exist, it returns a default value (usually None).
+# In this case, .get is used without specifying a default value.
+# key=all_freq.get: This part is passed as a keyword argument to the max function.
+# It specifies a function for sorting the dictionary elements. Here,
+# it uses the all_freq.get method to get the value (frequency) for each key in the dictionary.
+
+def max_frequency_string(input_string):
+    all_max = {}
+    for i in input_string:
+        if i not in all_max:
+            all_max[i] = 1
+        else:
+            all_max[i] += 1
+
+    max_values = max(all_max, key=all_max.get)
+    print(max_values)
+
+# Odd Frequency Characters
+# we need to extract all the string characters which have odd number of occurrences.
+def odd_frequency_chars(input_string):
+    all_max = {}
+    for i in input_string:
+        if i not in all_max:
+            all_max[i] = 1
+        else:
+            all_max[i] += 1
+
+    for k,v in all_max.items():
+        if v%2 !=0:
+            print(k)
+
+# Specific Characters Frequency in String List
+# extract frequency of specific characters in the whole strings list.
+def specific_character_frequency(input_string, specific_characters):
+    chars_count={}
+    for word in input_string:
+        for c in word:
+            if c in specific_characters and c not in chars_count:
+                chars_count[c] = 1
+            elif c in specific_characters and c in chars_count:
+                chars_count[c] += 1
+    print(chars_count)
+
