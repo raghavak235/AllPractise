@@ -318,8 +318,21 @@ def word_length(input_string, k):
 
 # Python program for removing i-th character from a string
 def remove_ith_character(input_string,i):
+    # ONE APPROACH USING POP
+    #Input value  'Geek'
+    a = list(input_string)
+    # Output of a:['G', 'e', 'e', 'k']
+    print(a)
+    # You can provide any index number from POP
+    a.pop(i)
+    print(a)
+    # ['G', 'e', 'k']
+
+    print(''.join(a))
     new_str = ''
-    # print(input_string.split())'
+    print(input_string.split())
+
+    # Another Approach
 
     for s in input_string.split():
         for ind, v in enumerate(s):
@@ -329,7 +342,7 @@ def remove_ith_character(input_string,i):
             else:
                 new_str += v
     print(new_str)
-remove_ith_character('Geek', 3)
 
-
-
+    # Another Approach
+    input_string =input_string[0:i]+input_string[i+1:]
+    print(input_string)
