@@ -1,4 +1,7 @@
+# https://www.geeksforgeeks.org/python-string-exercise/
 # https://www.geeksforgeeks.org/python-program-to-check-whether-the-string-is-symmetrical-or-palindrome/?ref=leftbar-rightbar
+import re
+
 
 # Python program to check whether the string is Symmetrical or Palindrome
 
@@ -289,4 +292,44 @@ def specific_character_frequency(input_string, specific_characters):
             elif c in specific_characters and c in chars_count:
                 chars_count[c] += 1
     print(chars_count)
+
+
+# Frequency of numbers in String
+
+def frequency_number_string(input_string):
+    res = len(re.findall(r'\d+', input_string))
+    print(res)
+
+# Program to check if a string contains any special character
+
+def special_char_string(input_string):
+    regex = re.compile('[@_!#$%^&*()<>?/|}{~:]')
+    if None == regex.search(input_string):
+        print("String Accepted")
+    else:
+        print('String Not Accepted')
+
+# Find words which are greater than given length k
+
+def word_length(input_string, k):
+    for w in input_string.split():
+        if len(w) > k:
+            print(w)
+
+# Python program for removing i-th character from a string
+def remove_ith_character(input_string,i):
+    new_str = ''
+    # print(input_string.split())'
+
+    for s in input_string.split():
+        for ind, v in enumerate(s):
+            # print(ind, v)
+            if ind == i:
+                pass
+            else:
+                new_str += v
+    print(new_str)
+remove_ith_character('Geek', 3)
+
+
 
