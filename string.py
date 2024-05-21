@@ -346,3 +346,77 @@ def remove_ith_character(input_string,i):
     # Another Approach
     input_string =input_string[0:i]+input_string[i+1:]
     print(input_string)
+
+ # Check if a given string is binary string or not
+
+
+#A binary string is a string that only has two characters, usually the numbers 0 and 1, and it represents a series of binary digits.
+
+def binary_string(input_string):
+
+
+        # initialize the variable t
+        # with '01' string
+        t = '01'
+
+        # initialize the variable count
+        # with 0 value
+        count = 0
+
+        # looping through each character
+        # of the string .
+        for char in input_string:
+
+            # check the character is present in
+            # string t or not.
+            # if this condition is true
+            # assign 1 to the count variable
+            # and break out of the for loop
+            # otherwise pass
+            if char not in t:
+                count = 1
+                break
+            else:
+                pass
+
+        # after coming out of the loop
+        # check value of count is non-zero or not
+        # if the value is non-zero the en condition is true
+        # and string is not accepted
+        # otherwise string is accepted
+        if count:
+            print("No")
+        else:
+            print("Yes")
+
+
+# Python program to find uncommon words from two Strings
+# Given two sentences as strings A and B. The task is to return a list of all uncommon words.
+# A word is uncommon if it appears exactly once in any one of the sentences, and does not appear in the other sentence.
+# Note: A sentence is a string of space-separated words. Each word consists only of lowercase letters.
+
+
+def uncommon_words(input_string1, input_string2):
+    count_dict={}
+
+    for i in input_string1.lower().split():
+            # print(input_string1.split())
+        if i not in count_dict:
+            count_dict[i] = 1
+        else:
+            count_dict[i] += 1
+    print(count_dict)
+
+    for j in input_string2.lower().split():
+        # print(input_string2.split())
+        if j not in count_dict:
+            count_dict[j] = 1
+        else:
+            count_dict[j] += 1
+    # print(count_dict)
+
+    for k,v in count_dict.items():
+        if v == 1:
+            print(k)
+
+# Check for URL in a String
