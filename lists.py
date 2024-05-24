@@ -1,4 +1,5 @@
 # All Coding Questions related to lists
+# https://www.geeksforgeeks.org/python-list-exercise/?ref=lbp
 # https://www.geeksforgeeks.org/python-exercises-practice-questions-and-solutions/
 # Python program to interchange first and last elements in a list
 
@@ -37,3 +38,67 @@ def swap_elements_list(pos1, pos2):
     input_list.insert(ind2, first_ele)
     print(input_list)
 
+# Swap elements in String list
+
+def swap_ele_list(list_str):
+    list_str = [i.replace('G', '-').replace('e','G').replace('-','e') for i in list_str]
+    print(list_str)
+
+# Different ways to clear a list in Python
+
+def clear_list(input_list):
+    print(input_list.clear())
+
+# Reversing a List in Python
+def reverse_list(input_list):
+    output_list = []
+    for i in range(len(input_list)-1, -1, -1):
+        output_list.append(input_list[i])
+    print(output_list)
+
+    # ALTERNATIVE LOGIC
+    print(input_list[::-1])
+
+# Count occurrences of an element in a list
+def count_elements(input_list, x):
+    from collections import Counter
+    dict = Counter(input_list)
+    print(dict, dict.get(x))
+
+
+# sum and average of List in Python
+
+def sum_avg_list(input_list):
+    sum_va = sum(input_list)
+    avg = sum_va/len(input_list)
+    print(sum_va, avg)
+
+# Multiply all numbers in the list
+def multiply_List(myList):
+    # Multiply elements one by one
+    result = 1
+    for x in myList:
+        result = result * x
+    return result
+
+ # program to find smallest number in a list
+def smallest_number_list(input_list):
+    smaller = input_list[0]
+    for v  in input_list:
+        if v < smaller:
+            smaller = v
+    print(smaller)
+
+# Program to Find Largest Number in a List
+def largest_number_list(input_list):
+    large = input_list[0]
+    for l in input_list:
+        if l > large:
+            large = l
+    print(large)
+
+# program to find second largest number in a list
+
+def second_largest_number(input_list):
+    first_large = input_list[0]
+    sec_large = input_list[1]
