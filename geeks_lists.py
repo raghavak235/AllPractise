@@ -102,3 +102,48 @@ def largest_number_list(input_list):
 def second_largest_number(input_list):
     first_large = input_list[0]
     sec_large = input_list[1]
+
+### Programs on List of Strings
+
+# Python program to find the character position of Kth word from a list of strings
+
+# Given a list of strings. The task is to find the index of the character position for the word, which lies at the Kth index in the list of strings.
+def kth_index():
+    test_list = ['geekforgeeks', 'is', 'best', 'for', 'geeks']
+    k = 16
+    count = 0  # Start count from 0
+
+    for word in test_list:
+        for i, char in enumerate(word):
+            count += 1
+            if count == k:
+                print(f"The character at position {k} is '{char}' and it's the {i}th element of the word '{word}'")
+                return i  # Returning the index within the word
+
+    print("The list does not contain that many characters.")
+    return -1  # Return -1 if k is out of bounds
+
+
+
+
+ # Convert Character Matrix to single String
+
+def conversion():
+    t=[['g', 'f', 'g'], ['i', 's'], ['b', 'e', 's', 't']]
+    ''.join(c for r in t for c in t)
+
+
+# Filter the List of String whose index in second List contains the given Substring
+def filter_lists():
+    l1= ['Gfg', 'is', 'not', 'best', 'and', 'not', 'for', 'CS']
+    l2=  ['Its ok', 'all ok', 'wrong', 'looks ok', 'ok', 'wrong', 'ok', 'thats ok']
+
+    sub_str='ok'
+    # Use zip() to iterate through both lists at the same time and map elements with the same index together.
+    # Check if the substring is in the second element (ele2) using the in operator.\
+    # If the substring is present, append the corresponding element from test_list1 to res\
+
+    for ele1, ele2 in zip(l1,l2):
+        print(ele1, ele2)
+        if sub_str in ele2:
+                res.append(ele1)
