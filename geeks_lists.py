@@ -137,7 +137,7 @@ def conversion():
 def filter_lists():
     l1= ['Gfg', 'is', 'not', 'best', 'and', 'not', 'for', 'CS']
     l2=  ['Its ok', 'all ok', 'wrong', 'looks ok', 'ok', 'wrong', 'ok', 'thats ok']
-
+    res=[]
     sub_str='ok'
     # Use zip() to iterate through both lists at the same time and map elements with the same index together.
     # Check if the substring is in the second element (ele2) using the in operator.\

@@ -256,6 +256,21 @@ def least_frequent_str(input_string):
 # It specifies a function for sorting the dictionary elements. Here,
 # it uses the all_freq.get method to get the value (frequency) for each key in the dictionary.
 
+# # Assuming all_max is a dictionary
+# all_max = {'a': 3, 'b': 5, 'c': 2}
+#
+# # Find the key with the maximum value
+# zmax_key = max(all_max, key=all_max.get)
+# print(f"Key with the maximum value: {zmax_key}")
+#
+# # Find the maximum value itself
+# zmax_value = all_max[zmax_key]
+# print(f"Maximum value: {zmax_value}")
+#
+# # Alternatively, if you just want the maximum value
+# max_value = max(all_max.values())
+# print(f"Maximum value (alternative): {max_value}")
+
 def max_frequency_string(input_string):
     all_max = {}
     for i in input_string:

@@ -574,7 +574,7 @@ def tuples_comparision(t1,t2):
 
 #tuples_comparision(t1=(1,2,3),t2=(1,4,5,))
 
-def set_comparision(s1, s2):
+def set_comparison(s1, s2):
 	pass
 	#s.symmetric_difference(t) new set with elements in either s or t but not both
 	#s.difference_update(t) return set s after removing elements found in t

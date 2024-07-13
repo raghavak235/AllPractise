@@ -84,8 +84,8 @@ def calc(c= 50, h =30):
 # Then, the output of the program should be:
 # [[0, 0, 0, 0, 0], [0, 1, 2, 3, 4], [0, 2, 4, 6, 8]]
 def matrix_creation():
-    rows = 2
-    columns = 2
+    rows = 3
+    columns = 5
     matrix = []
     for m in range(rows):
         l=[]
