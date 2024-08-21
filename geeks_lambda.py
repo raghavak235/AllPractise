@@ -101,3 +101,9 @@ def lambda_pos_neg():
     rearranged = sorted(numbers, key=lambda x: x >= 0)
 
     print(rearranged)
+
+
+ # how to find the max value between two elements using the Lambda function.
+def max_lambda():
+    val= lambda x,y: max(x,y)
+
