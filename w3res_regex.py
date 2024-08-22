@@ -130,3 +130,55 @@ def text_match(string):
 
 print(text_match("The quick brown fox jumps over the lazy dog."))
 print(text_match(" The quick brown fox jumps over the lazy dog."))
+
+
+# Write a Python program that starts each string with a specific number.
+def match_num(string):
+    text = re.compile(r"^5")
+    if text.match(string):
+        return True
+    else:
+        return False
+print(match_num('5-2345861'))
+print(match_num('6-2345861'))
+
+# Write a Python program to match a string that contains only upper and lowercase letters, numbers, and underscores.
+def text_match(text):
+    patterns = '^[a-zA-Z0-9_]*$'
+    if re.search(patterns, text):
+        return 'Found a match!'
+    else:
+        return ('Not matched!')
+
+
+print(text_match("The quick brown fox jumps over the lazy dog."))
+print(text_match("Python_Exercises_1"))
+
+
+# Write a Python program that matches a word containing 'z', not the start or end of the word.
+
+import re
+def text_match(text):
+        patterns = '\Bz\B'
+        if re.search(patterns,  text):
+                return 'Found a match!'
+        else:
+                return('Not matched!')
+
+print(text_match("The quick brown fox jumps over the lazy dog."))
+print(text_match("Python Exercises."))
+
+
+# Write a Python program that matches a word containing 'z'.
+
+import re
+def text_match(text):
+        patterns = '\w*z.\w*'
+        if re.search(patterns,  text):
+                return 'Found a match!'
+        else:
+                return('Not matched!')
+
+print(text_match("The quick brown fox jumps over the lazy dog."))
+print(text_match("Python Exercises."))
+
